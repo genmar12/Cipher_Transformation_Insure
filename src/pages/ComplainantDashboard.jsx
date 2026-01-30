@@ -12,19 +12,22 @@ function ComplainantDashboard() {
     <div className="min-h-screen bg-gray-100">
 
       {/* HEADER */}
-      <header className="bg-[#6495ED] text-white px-6 py-4 flex justify-between items-center">
+      <header className="bg-[#0A1A3F] text-white px-6 py-4 flex justify-between items-center">
         <div>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white text-[#6495ED] rounded-full flex items-center justify-center font-bold">
               LOGO
             </div>
-            <h1 className="text-xl font-bold">
-              Grievance Management System
-            </h1>
-          </div>
+            <div>
+              <h1 className="text-xl font-bold">
+                Grievance Management System
+              </h1>
           <p className="text-sm opacity-90">
             Complainant Portal
           </p>
+            </div>
+          </div>
+
         </div>
 
         <div className="flex items-center gap-6">
@@ -40,7 +43,7 @@ function ComplainantDashboard() {
       </header>
 
       {/* WELCOME BANNER */}
-      <section className="bg-[#0A1A3F] text-white px-6 py-10">
+      <section className="bg-[#0A1A3F] text-white px-6 py-10 m-6 rounded-2xl">
         <h2 className="text-2xl font-bold">
           Welcome to the Grievance Portal
         </h2>
@@ -73,7 +76,7 @@ function ComplainantDashboard() {
               onClick={() => setActiveTab(key)}
               className={`px-6 py-2 rounded-full font-medium transition ${
                 activeTab === key
-                  ? "bg-[#6495ED] text-white"
+                  ? "bg-[#0A1A3F] text-white"
                   : "text-gray-600"
               }`}
             >
@@ -99,15 +102,6 @@ function ComplainantDashboard() {
 
             {step === "contact" ? (
               <>
-                {/* FORM HEADER */}
-                <div>
-                  <h3 className="font-semibold">
-                    Submit Your Grievance
-                  </h3>
-                  <p className="text-sm text-gray-500">
-                    Welcome to the SUC Grievance Management System. Please provide your information below to get started.
-                  </p>
-                </div>
 
                 {/* ANONYMOUS CHECK */}
                 <div className="border rounded-lg p-4">
@@ -151,7 +145,7 @@ function ComplainantDashboard() {
 
                 <button
                   onClick={() => setStep("chatbot")}
-                  className="bg-[#6495ED] text-white px-6 py-3 rounded-lg"
+                  className="bg-[#0A1A3F] text-white px-6 py-3 rounded-lg"
                 >
                   Continue with Contact Info
                 </button>
@@ -182,35 +176,79 @@ function ComplainantDashboard() {
                   </button>
                 </div>
 
-                {/* CHATBOT */}
-                <div className="bg-gray-50 border rounded-lg p-4 space-y-4">
-                  <div className="text-sm whitespace-pre-line">
-                    ✅ <strong>Confidential Submission Selected</strong>
+          {/* CHATBOT */}
+          <div className="bg-gray-50 border rounded-lg p-4 flex flex-col h-[500px]">
 
-                    🔐 <strong>Privacy & Data Usage:</strong>
-                    • Your personal information will be collected securely
-                    • Only authorized administrators and office handlers can view your contact details
-                    • Your data will be used solely for processing and follow-up
-                    • Protected by university privacy policies
+            {/* CHAT MESSAGES */}
+            <div className="flex-1 space-y-4 overflow-y-auto pr-2">
 
-                    📝 <strong>Your Consent:</strong> By providing your information, you consent to its use.
-
-                    Now, please describe your issue in detail:
-                  </div>
-
-                  <textarea
-                    rows={4}
-                    placeholder="Type your grievance here..."
-                    className="w-full border rounded-lg p-3"
-                  />
-
-                  <div className="flex justify-between items-center">
-                    <input type="file" />
-                    <button className="bg-[#6495ED] text-white px-4 py-2 rounded">
-                      Submit
-                    </button>
-                  </div>
+              {/* BOT MESSAGE */}
+              <div className="flex items-start gap-2">
+                <div className="w-8 h-8 rounded-full bg-[#6495ED] text-white flex items-center justify-center text-sm">
+                  AI
                 </div>
+                <div className="bg-white border rounded-xl p-3 text-sm max-w-[80%] whitespace-pre-line">
+                  ✅ <strong>Confidential Submission Selected</strong>
+
+                  🔐 <strong>Privacy & Data Usage:</strong>
+                  • Your personal information will be collected securely  
+                  • Only authorized administrators and office handlers can view your contact details  
+                  • Your data will be used solely for processing and follow-up  
+                  • Protected by university privacy policies  
+
+                  📝 <strong>Your Consent:</strong> By providing your information, you consent to its use.
+
+                  Now, please describe your issue in detail, and I’ll help categorize and process it.
+                </div>
+              </div>
+
+              {/* USER MESSAGE (placeholder – will be dynamic later) */}
+              <div className="flex justify-end">
+                <div className="bg-[#6495ED] text-white rounded-xl p-3 text-sm max-w-[75%]">
+                  I want to report an issue regarding delayed document processing.
+                </div>
+              </div>
+
+            </div>
+
+            {/* SUGGESTED KEYWORDS */}
+            <div className="flex flex-wrap gap-2 my-3">
+              {[
+                "Delayed Processing",
+                "Unresponsive Office",
+                "Harassment",
+                "Facilities Issue",
+                "Academic Concern",
+              ].map((tag, i) => (
+                <button
+                  key={i}
+                  className="text-xs px-3 py-1 bg-white border rounded-full hover:bg-[#6495ED] hover:text-white transition"
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+
+            {/* INPUT BAR */}
+            <div className="border-t pt-3 flex items-center gap-2">
+              <label className="cursor-pointer text-xl">
+                📎
+                <input type="file" className="hidden" />
+              </label>
+
+              <input
+                type="text"
+                placeholder="Type your grievance here..."
+                className="flex-1 border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6495ED]"
+              />
+
+              <button className="bg-[#6495ED] text-white px-4 py-2 rounded-full text-sm">
+                Send
+              </button>
+            </div>
+
+          </div>
+
               </>
             )}
           </div>

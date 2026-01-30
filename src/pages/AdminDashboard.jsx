@@ -9,7 +9,7 @@ function AdminDashboard() {
     <div className="min-h-screen bg-gray-100">
 
       {/* HEADER */}
-      <header className="bg-[#6495ED] text-white px-6 py-4 flex justify-between items-center w-full mx-auto">
+      <header className="bg-[#0A1A3F] text-white px-6 py-4 flex justify-between items-center w-full mx-auto">
 
         {/* Left */}
         <div>
@@ -48,7 +48,7 @@ function AdminDashboard() {
         {/* STAT BOXES */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {[
-            { name: "Total Grievances", color: "bg-[#6495ED]" },
+            { name: "Total Grievances", color: "bg-[#0A1A3F] text-white" },
             { name: "Pending", color: "bg-white" },
             { name: "In Progress", color: "bg-white" },
             { name: "Resolved", color: "bg-white" },
@@ -80,7 +80,7 @@ function AdminDashboard() {
               key={btn.key}
               onClick={() => setActiveTab(btn.key)}
               className={`w-full sm:w-1/3 px-6 py-1 rounded-full font-medium transition ${
-                activeTab === btn.key ? "bg-[#6495ED] text-white" : "text-gray-600"
+                activeTab === btn.key ? "bg-[#0A1A3F] text-white" : "text-gray-600"
               }`}
             >
               {btn.label}
