@@ -91,8 +91,8 @@ const LandingPage = () => {
                   </svg>
                 </button>
                 <button
-                  onClick={() => navigate('/auth?role=admin')}
-                  className="group px-8 py-4 border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center sm:justify-start"
+                  onClick={() => navigate("/auth?role=admin")}
+                  className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center sm:justify-start"
                 >
                   Admin Portal
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

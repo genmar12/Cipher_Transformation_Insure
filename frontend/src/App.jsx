@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import Auth from './pages/Auth';
+import AuthPage from './auth/AuthPage';
 import AdminDashboard from './pages/AdminDashboard';
 import ComplainantDashboard from './pages/ComplainantDashboard';
+import OfficeDashboard from './pages/OfficeDashboard';
 import './App.css';
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/auth" element={<Auth />} />
+        <Route path="/auth" element={<AuthPage />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/complainant" element={<ComplainantDashboard />} />
+        <Route path="/office" element={<OfficeDashboard />} />
       </Routes>
     </div>
   );

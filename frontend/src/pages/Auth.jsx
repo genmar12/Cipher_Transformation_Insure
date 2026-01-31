@@ -72,7 +72,8 @@ function AuthPage() {
               </button>
 
               <button
-                className="w-full py-3 rounded-lg border border-blue-600 text-blue-600 font-medium hover:bg-blue-600 hover:text-white transition"
+                onClick={() => navigate("/office")}
+                className="w-full py-3 rounded-lg border border-purple-600 text-purple-600 font-medium hover:bg-purple-600 hover:text-white transition"
               >
                 Office Handler
               </button>
