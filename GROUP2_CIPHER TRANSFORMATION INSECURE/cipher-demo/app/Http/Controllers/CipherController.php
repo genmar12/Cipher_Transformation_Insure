@@ -12,14 +12,14 @@ class CipherController extends Controller
         return view('cipher');
     }
 
-    // 🔴 VULNERABLE VERSION 
+    // VULNERABLE VERSION 
     public function encryptInsecure(Request $request)
     {
 
      $request->validate([
         'message' => 'required|string|max:255'
     ]);
-    
+
         $data = $request->input('message');
 
         
