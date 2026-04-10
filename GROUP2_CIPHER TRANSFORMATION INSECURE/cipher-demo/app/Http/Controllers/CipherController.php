@@ -15,6 +15,11 @@ class CipherController extends Controller
     // 🔴 VULNERABLE VERSION 
     public function encryptInsecure(Request $request)
     {
+
+     $request->validate([
+        'message' => 'required|string|max:255'
+    ]);
+    
         $data = $request->input('message');
 
         
